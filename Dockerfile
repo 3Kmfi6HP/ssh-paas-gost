@@ -71,4 +71,4 @@ RUN bash /home/customuser/sshd_script.sh
 EXPOSE ${SERVER_PORT}
 
 # Start gost and sshd server
-CMD ["bash", "-c", "./gost -L mws://pass@:${SERVER_PORT}?path=/ws & /usr/sbin/sshd -f ${HOME}/custom_ssh/sshd_config -D & tail -f /dev/null"]
+CMD ["bash", "-c", "./gost -L mws://user:pass@:${SERVER_PORT}?path=/ws & /usr/sbin/sshd -f ${HOME}/custom_ssh/sshd_config -D & tail -f /dev/null"]
